@@ -1,5 +1,21 @@
+!!! 5
 %html
   %head
     %title TSSF Community Obedience
+    %link{href: 'http://fonts.googleapis.com/css?family=Forum', rel: 'stylesheet', type: 'text/css'}
+    %link{href: 'css/bootstrap.css',  rel: "stylesheet", media: "screen"}
+    %link{href: 'css/custom.css',  rel: "stylesheet", media: "screen"}
+
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+    %meta{'http-equiv' => "X-UA-Compatible", content: "IE=edge"}
+    
   %body
-    = yield
+    .container-narrow
+      .header
+        %h1 TSSF Community Obedience
+      %hr
+
+      = yield
+
+    %script{src: 'js/jquery.js'}
+    %script{src: 'js/bootstrap.js'}
