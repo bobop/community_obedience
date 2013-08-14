@@ -12,7 +12,11 @@
   %body
     .container-narrow
       .header
-        %h1 TSSF Community Obedience
+        .row
+          .col-md-9
+            %h1 TSSF Community Obedience
+          .col-md-3.text-right
+            %p.date= Time.now.strftime("%a %-d %b %Y")
       %hr
 
       = yield
