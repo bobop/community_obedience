@@ -10,9 +10,14 @@
     %br 
     you have redeemed the world.
 
+%p.instruction The daily reading from the Principles for day #{Time.now.day}
+
 = haml "principles/principle_#{Time.now.day}".to_sym
 
-%p.title Intercession
+/ - for d in 1..31
+/   = haml "principles/principle_#{d}".to_sym
+
+%p.instruction Intercessions for day #{Time.now.day}
 
 .prayer
   %p 
@@ -29,6 +34,8 @@
     after the example of St Francis, and win others to your love;
     %br 
     through Jesus Christ our Lord. Amen.
+
+%p.instruction The Collect for #{Time.now.strftime("%A")}
 
 %p.instruction The offering of prayer may continue with either Morning or Evening Prayer or conclude with either of the following:
 
