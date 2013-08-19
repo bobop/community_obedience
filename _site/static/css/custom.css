@@ -23,12 +23,8 @@ p.instruction {
   font-size: 14px;
   line-height: 20px;
 }
-.title {
+p.title {
   text-decoration: underline;
-}
-
-span.highlight {
-  font-weight: bold;
 }
 
 .prayer {
