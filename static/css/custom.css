@@ -1,5 +1,5 @@
 body {
-  background: url('/img/light_toast.png');
+  background: url('/img/light_toast_50.png');
 }
 
 body, h1, h2, h3, p {
@@ -19,7 +19,6 @@ p {
   line-height: 34px;
 }
 p.instruction {
-  color: #999;
   font-size: 14px;
   line-height: 20px;
 }
@@ -51,3 +50,5 @@ span.highlight {
 .container-narrow > hr {
   margin: 30px 0;
 }
+
+.align-right {float: right;}
