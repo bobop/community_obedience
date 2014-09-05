@@ -13,14 +13,17 @@
 %p.instruction The daily reading from the Principles for day #{Time.now.day}
 
 .row
-  .col-md-12= haml "principles/principle_#{Time.now.day}".to_sym
+  .col-md-12
+    / = haml "principles/principle_#{Time.now.day}".to_sym
+    = haml open("https://rawgit.com/bobop/community_obedience/master/views/principles/principle_#{Time.now.day}.haml").read
 
 / - for d in 1..31
 /   = haml "principles/principle_#{d}".to_sym
 
 %p.instruction Intercessions for day #{Time.now.day}
 
-= haml "intercessions/intercession_#{Time.now.day}".to_sym
+/ = haml "intercessions/intercession_#{Time.now.day}".to_sym
+= haml open("https://rawgit.com/bobop/community_obedience/master/views/intercessions/intercession_#{Time.now.day}.haml").read
 / - for d in 1..31
 /   %p.instruction Intercessions for day #{d}
 /   = haml "intercessions/intercession_#{d}".to_sym
@@ -43,7 +46,8 @@
 
 %p.instruction The Collect for #{Time.now.strftime("%A")}
 
-= haml "collects/collect_#{Time.now.strftime("%A")}".to_sym
+/ = haml "collects/collect_#{Time.now.strftime("%A")}".to_sym
+= haml open("https://rawgit.com/bobop/community_obedience/master/views/collects/collect_#{Time.now.strftime("%A")}.haml").read
 
 %p.instruction The offering of prayer may continue with either Morning or Evening Prayer or conclude with either of the following:
 

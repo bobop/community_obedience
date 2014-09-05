@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'open-uri'
 set :haml, :format => :html5
 
 configure do
