@@ -49,7 +49,11 @@
 / = haml "collects/collect_#{Time.now.strftime("%A")}".to_sym
 = haml open("https://rawgit.com/bobop/community_obedience/master/views/collects/collect_#{Time.now.strftime("%A")}.haml").read
 
-%p.instruction The offering of prayer may continue with either Morning or Evening Prayer or conclude with either of the following:
+%p.instruction The offering of prayer may continue with either 
+  %a{ :href => "http://daily.commonworship.com/daily.cgi?today_mp=1"} Morning
+  or 
+  %a{ :href => "http://daily.commonworship.com/daily.cgi?today_ep=1"} Evening 
+  Prayer or conclude with either of the following:
 
 .prayer
   %p
