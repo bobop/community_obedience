@@ -1,0 +1,5 @@
+development:
+  adapter: postgresql
+  database: co_dev
+  username: postgres
+  host: localhost 

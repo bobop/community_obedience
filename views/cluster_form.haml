@@ -1,0 +1,11 @@
+%h2 Edit Cluster
+
+%form{action: "/admin/clusters/#{@cluster.id}", method: :post, role: 'form'}
+  %input{type: "hidden", name: "_method", value: "put"}
+  .form-group
+    %label{for: 'cluster_name'} Cluster Name
+    %input{type: 'text', name: 'cluster[name]', class: 'form-control', value: @cluster.name}
+  .form-group
+    %label{for: 'cluster_content'} Content
+    %textarea{name: 'cluster[content]', class: 'form-control'}= @cluster.content
+  %input{type: 'submit', value: 'Save Cluster', class: 'btn btn-default'}

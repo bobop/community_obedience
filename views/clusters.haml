@@ -1,0 +1,26 @@
+%h2 Clusters
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Areas
+      %th
+  %tbody
+    - @clusters.each do |c|
+      %tr
+        %td= c.name
+        %td
+        %td
+          %a{href: "/admin/clusters/#{c.id}/edit"} edit
+          %a{href: '#'} delete
+%hr
+%h3 Create New Cluster
+%form{action: '/admin/clusters', method: :post, role: 'form'}
+  .form-group
+    %label{for: 'cluster_name'} Cluster Name
+    %input{type: 'text', name: 'cluster[name]', class: 'form-control'}
+  .form-group
+    %label{for: 'cluster_content'} Content
+    %textarea{name: 'cluster[content]', class: 'form-control'}
+  %input{type: 'submit', value: 'Create Cluster', class: 'btn btn-default'}
