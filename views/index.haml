@@ -33,7 +33,7 @@
 = haml open("https://raw.githubusercontent.com/bobop/community_obedience/master/views/intercessions/intercession_#{Time.now.day}.haml").read
 / - for d in 1..31
 /   %p.instruction Intercessions for day #{d}
-/   = haml "intercessions/intercession_#{d}".to_sym
+/   = haml open("https://raw.githubusercontent.com/bobop/community_obedience/master/views/intercessions/intercession_#{d}.haml").read
 
 .prayer
   %p 
