@@ -31,6 +31,36 @@
 
 / = haml "intercessions/intercession_#{Time.now.day}".to_sym
 / # = haml open("https://raw.githubusercontent.com/bobop/community_obedience/master/views/intercessions/intercession_#{Time.now.day}.haml").read
+
+.row
+  .col-md-12
+    - if @clusters.first == nil
+      - @areas.each do |area|
+        %p
+          %span.title= area.name
+          %br
+          = area.content.gsub(/\r\n/, '<br />')
+    - elsif @clusters.size > 1
+      - @areas.each do |area|
+        %p
+          %span.title= area.cluster.name
+          %br
+          = area.cluster.content
+        %p
+          %span.title= area.name
+          %br
+          = area.content.gsub(/\r\n/, '<br />')
+    - elsif @clusters.size == 1
+      %p
+        %span.title= @clusters.first.name
+        %br
+        = @clusters.first.content
+      - @areas.each do |area|
+        %p
+          %span.title= area.name
+          %br
+          = area.content.gsub(/\r\n/, '<br />')
+
 - for d in 1..31
   %p.instruction Intercessions for day #{d}
   = haml open("https://raw.githubusercontent.com/bobop/community_obedience/master/views/intercessions/intercession_#{d}.haml").read

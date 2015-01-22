@@ -1,0 +1,47 @@
+= haml :admin_nav
+
+%h2 Areas
+
+%table.table
+  %thead
+    %tr
+      %th Day
+      %th Name
+      %th Cluster
+      %th
+  %tbody
+    - @areas.each do |a|
+      %tr
+        %td= a.day
+        %td= a.name
+        %td= a.cluster.name if a.cluster.present?
+        %td
+          %a{href: "/admin/areas/#{a.id}/edit"} edit
+          %a{href: '#'} delete
+%hr
+%h3 Create New Area
+%form{action: '/admin/areas', method: :post, role: 'form'}
+  .row
+    .col-sm-6
+      .form-group
+        %label{for: 'day'} Day of the Month
+        %select{name: 'area[day]', class: 'form-control'}
+          - (1..31).each do |d|
+            %option{value: d, selected: @area.day == d}= d
+    .col-sm-6
+      .form-group
+        %label{for: 'cluster_id'} Cluster
+        %select{name: 'area[cluster_id]', class: 'form-control'}
+          %option No Cluster
+          - @clusters.each do |c|
+            %option{value: c.id, selected: @area.cluster_id == c.id}= c.name
+  .row
+    .col-md-12
+      .form-group
+        %label{for: 'area_name'} Area Name
+        %input{type: 'text', name: 'area[name]', class: 'form-control'}
+    .col-md-12
+      .form-group
+        %label{for: 'area_content'} Content
+        %textarea{name: 'area[content]', class: 'form-control', rows: 10}
+  %input{type: 'submit', value: 'Create Area', class: 'btn btn-default'}

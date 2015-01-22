@@ -1,3 +1,5 @@
+= haml :admin_nav
+
 %h2 Clusters
 
 %table.table
@@ -10,7 +12,7 @@
     - @clusters.each do |c|
       %tr
         %td= c.name
-        %td
+        %td= c.areas.map{ |a| a.name }.join(', ')
         %td
           %a{href: "/admin/clusters/#{c.id}/edit"} edit
           %a{href: '#'} delete
