@@ -1,5 +1,9 @@
 %ul{class:'nav nav-pills'}
-  %li{role: 'presentation', class: @area.present? ? '' : 'active'}
+  %li{role: 'presentation', class: @nav == 'p' ? 'active' : ''}
+    %a{href: '/admin/provinces'} Provinces
+  %li{role: 'presentation', class: @nav == 'n' ? 'active' : ''}
+    %a{href: '/admin/nations'} Nations
+  %li{role: 'presentation', class: @nav == 'c' ? 'active' : ''}
     %a{href: '/admin/clusters'} Clusters
-  %li{role: 'presentation', class: @area.present? ? 'active' : ''}
+  %li{role: 'presentation', class: @nav == 'a' ? 'active' : ''}
     %a{href: '/admin/areas'} Areas

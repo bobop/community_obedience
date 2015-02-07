@@ -1,0 +1,13 @@
+= haml :admin_nav
+
+%h2 Edit Province
+
+%form{action: "/admin/provinces/#{@province.id}", method: :post, role: 'form'}
+  %input{type: "hidden", name: "_method", value: "put"}
+  .form-group
+    %label{for: 'province_name'} Province Name
+    %input{type: 'text', name: 'province[name]', class: 'form-control', value: @province.name}
+  .form-group
+    %label{for: 'province_url'} URL
+    %input{type: 'text', name: 'province[url]', class: 'form-control', value: @province.url}
+  %input{type: 'submit', value: 'Save Province', class: 'btn btn-default'}

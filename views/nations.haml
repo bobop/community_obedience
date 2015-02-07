@@ -1,0 +1,43 @@
+= haml :admin_nav
+
+%h2 Nations
+
+%table.table
+  %thead
+    %tr
+      %th Day
+      %th Content
+      %th Province
+      %th
+  %tbody
+    - @nations.each do |n|
+      %tr
+        %td= n.day
+        %td= n.content
+        %td= n.province.name if n.province.present?
+        %td
+          %a{href: "/admin/nations/#{n.id}/edit"} edit
+          %a{href: '#'} delete
+%hr
+%h3 Create New Nation
+%form{action: '/admin/nations', method: :post, role: 'form'}
+  .row
+    .col-sm-6
+      .form-group
+        %label{for: 'day'} Day of the Month
+        %select{name: 'nation[day]', class: 'form-control'}
+          - (1..31).each do |d|
+            %option{value: d, selected: @nation.day == d}= d
+    .col-sm-6
+      .form-group
+        %label{for: 'province_id'} Province
+        %select{name: 'nation[province_id]', class: 'form-control'}
+          %option No Province
+          - @provinces.each do |c|
+            %option{value: c.id, selected: @nation.province_id == c.id}= c.name
+  .row
+    .col-md-12
+      .form-group
+        %label{for: 'nation_content'} Content
+        %textarea{name: 'nation[content]', class: 'form-control', rows: 2}
+  %input{type: 'submit', value: 'Create Nation', class: 'btn btn-default'}

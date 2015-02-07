@@ -1,0 +1,8 @@
+- @nations.each do |nation|
+  %p.well
+    %span.title 
+      = nation.province.name
+    %a{href: nation.province.url, target: "_blank"}
+      %i.fa.fa-external-link
+    %br
+    = nation.content

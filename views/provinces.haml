@@ -1,0 +1,28 @@
+= haml :admin_nav
+
+%h2 Provinces
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Nations
+      %th
+  %tbody
+    - @provinces.each do |p|
+      %tr
+        %td= p.name
+        %td= p.nations.map{ |a| a.content }.join('<br />')
+        %td
+          %a{href: "/admin/provinces/#{p.id}/edit"} edit
+          %a{href: '#'} delete
+%hr
+%h3 Create New Province
+%form{action: '/admin/provinces', method: :post, role: 'form'}
+  .form-group
+    %label{for: 'province_name'} Province Name
+    %input{type: 'text', name: 'province[name]', class: 'form-control'}
+  .form-group
+    %label{for: 'province_url'} URL
+    %input{type: 'text', name: 'province[url]', class: 'form-control'}
+  %input{type: 'submit', value: 'Create Province', class: 'btn btn-default'}
