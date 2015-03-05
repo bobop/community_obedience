@@ -13,8 +13,8 @@
       %tr
         %td= p.name
         %td= p.nations.map{ |a| a.content }.join('<br />')
-        %td
-          %a{href: "/admin/provinces/#{p.id}/edit"} edit
+        %td.text-right
+          %a.btn.btn-sm.btn-default{href: "/admin/provinces/#{p.id}/edit"} edit
           %a{href: '#'} delete
 %hr
 %h3 Create New Province

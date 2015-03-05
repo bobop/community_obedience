@@ -31,8 +31,9 @@
   %p.instruction Intercessions for day #{Time.now.day}
   .row
     .col-md-12
-      = haml :province_view
-      = haml :areas_view
+      / = haml :province_view
+      / = haml :areas_view
+      = haml open("https://raw.githubusercontent.com/bobop/community_obedience/master/views/intercessions/intercession_#{Time.now.day}.haml").read
 - else
   - for d in 1..31
     %p.instruction Intercessions for day #{d}

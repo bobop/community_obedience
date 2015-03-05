@@ -13,8 +13,8 @@
       %tr
         %td= c.name
         %td= c.areas.map{ |a| a.name }.join(', ')
-        %td
-          %a{href: "/admin/clusters/#{c.id}/edit"} edit
+        %td.text-right
+          %a.btn.btn-sm.btn-default{href: "/admin/clusters/#{c.id}/edit"} edit
           %a{href: '#'} delete
 %hr
 %h3 Create New Cluster

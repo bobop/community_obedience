@@ -15,8 +15,8 @@
         %td= n.day
         %td= n.content
         %td= n.province.name if n.province.present?
-        %td
-          %a{href: "/admin/nations/#{n.id}/edit"} edit
+        %td.text-right
+          %a.btn.btn-sm.btn-default{href: "/admin/nations/#{n.id}/edit"} edit
           %a{href: '#'} delete
 %hr
 %h3 Create New Nation

@@ -15,8 +15,8 @@
         %td= a.day
         %td= a.name
         %td= a.cluster.name if a.cluster.present?
-        %td
-          %a{href: "/admin/areas/#{a.id}/edit"} edit
+        %td.text-right
+          %a.btn.btn-sm.btn-default{href: "/admin/areas/#{a.id}/edit"} edit
           %a{href: '#'} delete
 %hr
 %h3 Create New Area
