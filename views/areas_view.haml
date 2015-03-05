@@ -7,8 +7,9 @@
 - elsif @clusters.size > 1
   - @areas.each do |area|
     %p
-      %span.title= area.cluster.name
-      %br
+      - if area.cluster.present?
+        %span.title= area.cluster.name
+        %br
       = area.cluster.content
     %p
       %span.title= area.name
