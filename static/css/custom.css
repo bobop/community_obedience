@@ -44,6 +44,9 @@ span.highlight {
 .well i {
   margin-left: 10px;
 }
+.well p {
+  margin-bottom: 0px;
+}
 
 .prayer {
   text-align: center;
