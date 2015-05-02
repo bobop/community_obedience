@@ -26,5 +26,5 @@
     .col-md-12
       .form-group
         %label{for: 'area_content'} Content
-        %textarea{name: 'area[content]', class: 'form-control', rows: 10}= @area.content
+        %textarea{name: 'area[content]', class: 'form-control', id: 'editable', rows: 10}= @area.content
   %input{type: 'submit', value: 'Save Area', class: 'btn btn-default'}

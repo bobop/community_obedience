@@ -9,5 +9,5 @@
     %input{type: 'text', name: 'cluster[name]', class: 'form-control', value: @cluster.name}
   .form-group
     %label{for: 'cluster_content'} Content
-    %textarea{name: 'cluster[content]', class: 'form-control'}= @cluster.content
+    %textarea{name: 'cluster[content]', class: 'form-control', id: 'editable'}= @cluster.content
   %input{type: 'submit', value: 'Save Cluster', class: 'btn btn-default'}
