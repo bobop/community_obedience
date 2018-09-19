@@ -27,12 +27,7 @@
             %p.date= Time.now.strftime("%a %-d %b %Y")
       %hr
 
-      - if flash[:notice].present?
-        %p.alert.alert-success= flash[:notice]
-      - if flash[:error].present?
-        %p.alert.alert-error= flash[:error]
-
-      = yield
+      %p This site is no longer in use. Redirecting you to the new TSSF website to access the new Community Obedience...
 
       %hr
 
@@ -42,6 +37,9 @@
         TSSF European Province Website
 
       %hr
+
+    :javascript
+      window.location.replace("https://tssf.org.uk/tertiary-members-centre/community-obedience/");
 
     :javascript
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

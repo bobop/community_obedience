@@ -1,14 +1,14 @@
 require 'sinatra'
 require 'open-uri'
-require 'sinatra/activerecord'
+# require 'sinatra/activerecord'
 require 'sinatra/flash'
 require 'sinatra/redirect_with_flash'
 require './config/environments' #database configuration
 # MODELS
-require './models/province'
-require './models/nation'
-require './models/cluster'
-require './models/area'
+# require './models/province'
+# require './models/nation'
+# require './models/cluster'
+# require './models/area'
 
 enable :sessions
 
@@ -33,11 +33,11 @@ helpers do
 end
 
 get '/' do
-  unless params[:all] == 'true'
-    @nations = Nation.where(day: Date.today.mday)
-    @areas = Area.where(day: Date.today.mday)
-    @clusters = @areas.map{ |a| a.cluster }.uniq
-  end
+  # unless params[:all] == 'true'
+  #   @nations = Nation.where(day: Date.today.mday)
+  #   @areas = Area.where(day: Date.today.mday)
+  #   @clusters = @areas.map{ |a| a.cluster }.uniq
+  # end
   haml :index
 end
 

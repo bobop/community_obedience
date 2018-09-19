@@ -1,101 +1,101 @@
-%p.instruction 
-  In all provinces of the Third Order this offering of prayer should be made daily, either on its own or in the context of 
-  %a{ href:"http://daily.commonworship.com/daily.cgi?today_mp=1"}
-    Morning
-  or
-  %a{ href:"http://daily.commonworship.com/daily.cgi?today_ep=1"}
-    Evening
-  Prayer
+/ %p.instruction 
+/   In all provinces of the Third Order this offering of prayer should be made daily, either on its own or in the context of 
+/   %a{ href:"http://daily.commonworship.com/daily.cgi?today_mp=1"}
+/     Morning
+/   or
+/   %a{ href:"http://daily.commonworship.com/daily.cgi?today_ep=1"}
+/     Evening
+/   Prayer
 
-.prayer
-  %p 
-    We adore you, most holy, Lord Jesus Christ
-    %br 
-    here and in all your churches throughout the world,
-    %br 
-    and we bless you, because by your holy Cross,
-    %br 
-    you have redeemed the world.
+/ .prayer
+/   %p 
+/     We adore you, most holy, Lord Jesus Christ
+/     %br 
+/     here and in all your churches throughout the world,
+/     %br 
+/     and we bless you, because by your holy Cross,
+/     %br 
+/     you have redeemed the world.
 
-%p.instruction The daily reading from the Principles for day #{Time.now.day}
+/ %p.instruction The daily reading from the Principles for day #{Time.now.day}
 
-.row
-  .col-md-12
-    = haml "principles/principle_#{Time.now.day}".to_sym
-    / = haml open("https://raw.githubusercontent.com/bobop/community_obedience/master/views/principles/principle_#{Time.now.day}.haml").read
+/ .row
+/   .col-md-12
+/     = haml "principles/principle_#{Time.now.day}".to_sym
+/     / = haml open("https://raw.githubusercontent.com/bobop/community_obedience/master/views/principles/principle_#{Time.now.day}.haml").read
 
-/ - for d in 1..31
-/   = haml "principles/principle_#{d}".to_sym
+/ / - for d in 1..31
+/ /   = haml "principles/principle_#{d}".to_sym
 
-- unless params[:all] == 'true'
-  %p.instruction Intercessions for day #{Time.now.day}
-  .row
-    .col-md-12
-      = haml :province_view
-      = haml :areas_view
-- else
-  - for d in 1..31
-    %p.instruction Intercessions for day #{d}
-    .row
-      .col-md-12
-        - @nations = Nation.where(day: d)
-        - @areas = Area.where(day: d)
-        - @clusters = @areas.map{ |a| a.cluster }.uniq
-        = haml :province_view
-        = haml :areas_view
+/ - unless params[:all] == 'true'
+/   %p.instruction Intercessions for day #{Time.now.day}
+/   .row
+/     .col-md-12
+/       = haml :province_view
+/       = haml :areas_view
+/ - else
+/   - for d in 1..31
+/     %p.instruction Intercessions for day #{d}
+/     .row
+/       .col-md-12
+/         - @nations = Nation.where(day: d)
+/         - @areas = Area.where(day: d)
+/         - @clusters = @areas.map{ |a| a.cluster }.uniq
+/         = haml :province_view
+/         = haml :areas_view
 
-  / - for d in 1..31
-  /   %p.instruction Intercessions for day #{d}
-  /   = haml open("https://raw.githubusercontent.com/bobop/community_obedience/master/views/intercessions/intercession_#{d}.haml").read
+/   / - for d in 1..31
+/   /   %p.instruction Intercessions for day #{d}
+/   /   = haml open("https://raw.githubusercontent.com/bobop/community_obedience/master/views/intercessions/intercession_#{d}.haml").read
 
-.prayer
-  %p 
-    O God, we give you thanks
-    %br 
-    for the Third Order of the Society of St Francis.
-    %br 
-    Grant, we pray, that being knit together
-    %br 
-    in community and prayer,
-    %br 
-    we your servants may glorify your holy name
-    %br 
-    after the example of St Francis, and win others to your love;
-    %br 
-    through Jesus Christ our Lord. Amen.
+/ .prayer
+/   %p 
+/     O God, we give you thanks
+/     %br 
+/     for the Third Order of the Society of St Francis.
+/     %br 
+/     Grant, we pray, that being knit together
+/     %br 
+/     in community and prayer,
+/     %br 
+/     we your servants may glorify your holy name
+/     %br 
+/     after the example of St Francis, and win others to your love;
+/     %br 
+/     through Jesus Christ our Lord. Amen.
 
-%p.instruction The Collect for #{Time.now.strftime("%A")}
+/ %p.instruction The Collect for #{Time.now.strftime("%A")}
 
-= haml "collects/collect_#{Time.now.strftime("%A")}".to_sym
-/ = haml open("https://raw.githubusercontent.com/bobop/community_obedience/master/views/collects/collect_#{Time.now.strftime("%A")}.haml").read
+/ = haml "collects/collect_#{Time.now.strftime("%A")}".to_sym
+/ / = haml open("https://raw.githubusercontent.com/bobop/community_obedience/master/views/collects/collect_#{Time.now.strftime("%A")}.haml").read
 
-%p.instruction 
-  The offering of prayer may continue with either 
-  %a{ href:"http://daily.commonworship.com/daily.cgi?today_mp=1"} 
-    Morning
-  or 
-  %a{ href:"http://daily.commonworship.com/daily.cgi?today_ep=1"} 
-    Evening 
-  Prayer or conclude with either of the following:
+/ %p.instruction 
+/   The offering of prayer may continue with either 
+/   %a{ href:"http://daily.commonworship.com/daily.cgi?today_mp=1"} 
+/     Morning
+/   or 
+/   %a{ href:"http://daily.commonworship.com/daily.cgi?today_ep=1"} 
+/     Evening 
+/   Prayer or conclude with either of the following:
 
-.prayer
-  %p
-    May our Blessed Lady pray for us;
-    %br 
-    May St Francis pray for us;
-    %br 
-    May St Clare pray for us;
-    %br 
-    May all the Saints of the Third Order pray for us;
-    %br 
-    May the holy angels watch over us and befriend us;
-    %br 
-    May our Lord Jesus give us his blessing and his peace. Amen. 
+/ .prayer
+/   %p
+/     May our Blessed Lady pray for us;
+/     %br 
+/     May St Francis pray for us;
+/     %br 
+/     May St Clare pray for us;
+/     %br 
+/     May all the Saints of the Third Order pray for us;
+/     %br 
+/     May the holy angels watch over us and befriend us;
+/     %br 
+/     May our Lord Jesus give us his blessing and his peace. Amen. 
 
-.prayer
-  %p
-    The grace of our Lord Jesus Christ, the love of God,
-    %br 
-    and the fellowship of the Holy Spirit
-    %br 
-    be with us evermore. Amen.
+/ .prayer
+/   %p
+/     The grace of our Lord Jesus Christ, the love of God,
+/     %br 
+/     and the fellowship of the Holy Spirit
+/     %br 
+/     be with us evermore. Amen.
